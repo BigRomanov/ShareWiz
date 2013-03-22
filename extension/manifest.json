@@ -10,7 +10,6 @@
     "*://*/*"
   ],
   "background": {
-    "persistent": false,
     "scripts": ["contextMenu.js"]
   },
   "browser_action": {
