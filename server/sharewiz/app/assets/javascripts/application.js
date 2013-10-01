@@ -13,3 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+function track_event(a,b,c) {
+  // TODO: Add Google Analytics Code here
+}

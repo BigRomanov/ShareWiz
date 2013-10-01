@@ -2,10 +2,79 @@
 %html
   %head
     %title Sharewiz
+    = stylesheet_link_tag    "global", :media => "all"
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-    %p.notice= notice
-    %p.alert= alert
-    = yield
+    #footer_wrapper
+      #header_wrapper
+        #header
+          .logo-container
+            %a{:href => "/", :onclick => "track_event('Website Header','Logo','');"}/
+            .logo
+              ShareWiz.me
+          
+          #header-menu-user.menu
+            %ul
+              %li#user-info
+                .user-img.user-thumb-large
+                  %img{:src => ""}/
+                .user-info
+                  .user-title.fnt-thick Hello
+                  .user-name.fnt-reg
+                    %span.ellipsis_text
+                %div{:style => "clear:both"}
+              %li#header-tab-facebook-settings.switcher
+                .facebook-settings-title.fnt-thin Facebook
+                .switcher-bg
+                  .switcher-txt OFF
+                  .switcher-thumb
+                %div{:style => "clear:both;"}
+              %li
+                %a{:href => "/account/settings", :onclick => "track_event('Website Header','User Menu','Settings');"}
+                  %span Settings
+              %li.usermenu_logout
+                %a{:href => "/logout", :onclick => "track_event('Website Header','User Menu','Log out');"}
+                  %span Log out
+          .tabs
+            %ul
+              %li#header-tab-popular
+                %a.fnt-reg{:href => "/featured-videos", :onclick => "track_event('Website Header','Popular','');"}
+                  %span SHARES
+              %li#header-tab-my-movies
+                %a.fnt-reg{:href => "javascript:Login.show_login('/video/mine')", :onclick => "track_event('Website Header','My Movies','');"}
+                  %span FRIENDS
+              %li#header-tab-my-groups
+                %a.fnt-reg{:href => "/group/mine", :onclick => "track_event('Website Header','My Groups','');"}
+                  %span GROUPS
+              %li#header-tab-upload
+                %a.fnt-reg{:href => "javascript:Login.show_login('/video/upload')", :onclick => "track_pageview('/virtual/menu/button/create_movie');track_event('Website Header','Create Movie',''); return true;"}
+                  %span CONTEXTS
+                  
+          .right-tabs
+            .user_details
+              -if user_signed_in?
+                .header_user_email
+                  =current_user.email
+                  = link_to 'logout', destroy_user_session_path, :method => :delete, :class => 'auth_links'
+
+          %div{:style => "clear:both"}
+        
+      #header_message
+        - unless notice.blank?
+          .notice= notice
+        - unless alert.blank?
+          .alert= alert
+    
+      #content_wrapper
+        #content_container
+          #content
+            = yield
+          
+        #footer
+          #footer_legal
+            %div{:style => "margin-bottom:5px;"} 
+              ® 2013 Square One Design.
+            %a{:href => "/privacy", :onclick => "track_event('footer','privacy','')"} Privacy
+            %a{:href => "/tos", :onclick => "track_event('footer','terms','')"} Terms of use

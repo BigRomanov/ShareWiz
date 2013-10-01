@@ -4,7 +4,21 @@ Sharewiz::Application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
 
-  devise_for :users
+  #devise_for :users
+  
+  # to fix the issue with
+  # NoMethodError (undefined method `users_url' for #<Devise::SessionsController:0x3835600>):
+  # fix recommended here: https://github.com/plataformatec/devise/issues/1350
+  resources :users 
+
+  devise_for :users, :controllers => {:sessions => 'sessions'}
+  
+  namespace :api, defaults: {format: 'json'} do
+    namespace :v1 do
+      resources :locations
+    end
+  end
+  
 
   get "home/index"
 

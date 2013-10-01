@@ -1,0 +1,171 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require home
+*/
+
+html, body {
+  padding:0;
+  margin:0;
+  height:100%;
+  background:gray;
+}
+
+#footer_wrapper {
+  position:relative;
+  height:auto !important;
+  min-height:100%;
+}
+
+#header_wrapper {
+  position:relative;
+  min-width:1024px;
+  background-color:white;
+  border-bottom:1px solid #D6D6D6;
+}
+
+#header {
+  min-width:920px;
+  max-width:1280px;
+  height:60px;
+  margin-right:auto;
+  margin-left:auto;
+  
+}
+
+#header .logo {
+  position: absolute;
+  left:30px;
+  top:5px;
+/*  background-image: image-url("icon.png");
+  background-repeat:no-repeat;
+*/  width:100px;
+  height:40px;
+  font-size:20px;
+  padding-top:15px;
+}
+
+#header .auth_links {
+  display:block;
+  font-size:12px;
+}
+
+
+
+#header .tabs {
+  position: absolute;
+  left:190px;
+  height:100%;
+}
+
+#header .tabs ul {
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+
+#header .tabs li {
+  float: left;
+  width: 110px;
+  height: 62px;
+  line-height: 62px;
+  cursor: pointer;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  word-spacing: normal;
+  color: #464646;
+}
+
+#header .tabs li a {
+  display: block;
+  color: #464646;
+  font-size: 15px;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+
+#header .right-tabs {
+  position: absolute;
+  right: 0;
+  height: 100%;
+}
+
+#header .right-tabs li {
+  float: left;
+  height: 62px;
+  line-height: 62px;
+  text-align: center;
+  border-left: 1px solid #B2B2B2;
+  color: #2AA8B9;
+}
+
+#header .user_details {
+  margin:10px;
+}
+
+
+
+.menu {
+  position: absolute;
+  top: 62px;
+  display: none;
+  border-top: 4px solid #3CC3D2;
+  border-left: 1px solid #AAA;
+  border-right: 1px solid #AAA;
+  border-bottom: 1px solid #AAA;
+  background-color: white;
+  z-index: 2000;
+}
+
+#header_message {
+  width:100%;
+  height:20px;
+  color:blue;
+  overflow:hidden;
+}
+
+#content {
+  position: relative;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom:50px;
+  min-width:920px;
+  max-width:1280px;
+  border:1px solid red;
+}
+
+#footer {
+  display: inline;
+  height: 70px;
+  width: 100%;
+  
+  background-color: #F3F3F3;
+  padding: 30px 0 0 0px;
+  position: absolute;
+  bottom: 0px;
+  min-width: 920px;
+}
+
+#footer_legal {
+  position: absolute;
+  right: 160px;
+  top: 20px;
+  color: #797979;
+  font-size: 15px;
+  
+  a {
+    margin-right:20px;
+  }
+}
+  
