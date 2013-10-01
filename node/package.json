@@ -1,0 +1,1 @@
+{    "name": "ShareWiz",    "version": "0.0.0",    "description": "ShareWiz.me Server",    "dependencies": {        "socket.io": "latest",        "express": "latest",        "jade": "latest"    },    "author": "mistralz"}
